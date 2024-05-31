@@ -4,6 +4,7 @@ alias startssh="eval '$(ssh-agent -s)'"
 
 # Change dir
 alias devnvim="cd ~/.config/nvim"
+alias devoneclick="cd ~/oneclick"
 
 alias devlearn="cd ~/code/learn"
 alias devairflow="cd ~/code/learn/airflow-playground"
@@ -16,10 +17,11 @@ alias k="kubectl"
 alias mux="tmuxinator"
 alias muxmain="tmuxinator dump && tmux a -t dump"
 
-# alias python="python3.12"
-# alias py="python3.12"
-# alias pip="pip3.12"
+alias python="python3.12"
+alias py="python3.12"
+alias pip="pip3.12"
 
 alias tf="terraform"
 alias tfplan="tfenv use min-required && terraform plan"
 alias tfinit="tfenv use min-required && terraform init"
+
