@@ -1,5 +1,6 @@
 # Git
 alias sshwho="ssh-add -l"
+alias sshgitme="ssh-add -D && ssh-add ~/.ssh/gitme"
 alias startssh="eval '$(ssh-agent -s)'"
 
 # Change dir
