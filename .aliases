@@ -26,3 +26,30 @@ alias tf="terraform"
 alias tfplan="tfenv use min-required && terraform plan"
 alias tfinit="tfenv use min-required && terraform init"
 
+function muxdocs {
+  tmuxinator dump
+  tmuxinator notes
+  tmuxinator p30961-docs
+  tmux a -t dump
+}
+
+function muxtf {
+  tmuxinator dump
+  tmuxinator notes
+  tmuxinator tf-templates
+  tmuxinator tf-modules
+  tmuxinator p27345-tfconfig
+  tmuxinator p27345-irg
+  tmuxinator p24317-tfconfig
+  tmuxinator p24317-irg
+  tmux a -t dump
+}
+
+function muxbackstage {
+  tmuxinator dump
+  tmuxinator notes
+  tmuxinator backtage-global
+  tmuxinator backstage-global-templates
+  tmuxinator p27345-backstage
+  tmux a -t dump
+}
