@@ -1,7 +1,8 @@
 # Git
 alias sshwho="ssh-add -l"
 alias sshgitme="ssh-add -D && ssh-add ~/.ssh/gitme"
-alias sshgiting="ssh-add -D && ssh-add ~/.ssh/git-ing"
+alias sshgitingcp="ssh-add -D && ssh-add ~/.ssh/git-ingcp" # ING copilot account
+alias sshgiting="ssh-add -D && ssh-add ~/.ssh/git-ing" # ING copilot general account (log in with _ing as username in github.com safari)
 alias startssh="eval '$(ssh-agent -s)'"
 
 # Change dir
@@ -19,9 +20,9 @@ alias k="kubectl"
 alias mux="tmuxinator"
 alias muxmain="tmuxinator dump && tmux a -t dump"
 
-alias python="python3.12"
-alias py="python3.12"
-alias pip="pip3.12"
+# alias python="python3.12"
+alias py="python"
+# alias pip="pip3.12"
 
 alias tf="terraform"
 alias tfplan="tfenv use min-required && terraform plan"
@@ -31,6 +32,7 @@ function muxdocs {
   tmuxinator dump
   tmuxinator notes
   tmuxinator p30961-docs
+  tmuxinator p27345-irg
   tmux a -t dump
 }
 
@@ -52,5 +54,13 @@ function muxbackstage {
   tmuxinator backtage-global
   tmuxinator backstage-global-templates
   tmuxinator p27345-backstage
+  tmux a -t dump
+}
+
+function muxhackathon {
+  tmuxinator dump
+  tmuxinator notes
+  tmuxinator hackathon-git
+  tmuxinator docrag
   tmux a -t dump
 }
