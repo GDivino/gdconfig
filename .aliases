@@ -28,6 +28,8 @@ alias tf="terraform"
 alias tfplan="tfenv use min-required && terraform plan"
 alias tfinit="tfenv use min-required && terraform init"
 
+alias podman="/opt/podman/bin/podman"
+
 function muxdocs {
   tmuxinator dump
   tmuxinator notes
