@@ -43,6 +43,7 @@ function muxtf {
   tmuxinator notes
   tmuxinator tf-templates
   tmuxinator tf-modules
+  tmuxinator tf-sandbox
   tmuxinator p27345-tfconfig
   tmuxinator p27345-irg
   tmuxinator p24317-tfconfig
@@ -53,9 +54,16 @@ function muxtf {
 function muxbackstage {
   tmuxinator dump
   tmuxinator notes
-  tmuxinator backtage-global
+  tmuxinator backstage-global
   tmuxinator backstage-global-templates
   tmuxinator p27345-backstage
+  tmuxinator tf-templates
+  tmuxinator tf-modules
+  tmuxinator tf-sandbox
+  tmuxinator p27345-tfconfig
+  tmuxinator p27345-irg
+  tmuxinator p24317-tfconfig
+  tmuxinator p24317-irg
   tmux a -t dump
 }
 
@@ -65,4 +73,19 @@ function muxhackathon {
   tmuxinator hackathon-git
   tmuxinator docrag
   tmux a -t dump
+}
+
+function muxinterns {
+  tmuxinator dump
+  tmuxinator notes
+  tmuxinator p31286-workshop
+  tmux a -t dump
+}
+
+function muxonboard {
+  tmuxinator dump
+  tmuxinator notes
+  tmuxinator p25719-onboarding
+  tmuxinator p27345-irg
+  tmuxinator p24317-irg
 }
