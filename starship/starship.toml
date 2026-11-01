@@ -1,0 +1,73 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+format = """
+$directory
+
+$git_branch
+
+$git_commit
+
+$git_state
+
+$git_status
+
+$line_break
+
+$character"""
+
+add_newline = false
+
+[directory]
+style = "bold cyan"
+read_only = " 󰌾"
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = "…/"
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "on [$symbol$branch]($style) "
+
+[git_commit]
+commit_hash_length = 7
+style = "bold green"
+format = "(($hash$tag) )"
+only_detached = true
+
+[git_state]
+style = "bold yellow"
+format = "(($state( $progress_current/$progress_total)) )"
+
+[git_status]
+style = "bold red"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+conflicted = "󰞇 "
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = ""
+stashed = "📦"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[gcloud]
+disabled = true
+
+[aws]
+disabled = true
