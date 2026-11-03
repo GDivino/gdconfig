@@ -32,6 +32,13 @@ ln -sf ~/.config/gdconfig/.tmux.conf ~/.tmux.conf
 ln -sf ~/.config/gdconfig/starship.toml ~/.config/starship/starship.toml
 ```
 
+### 4. Install starship
+Use homebrew to install starship
+```zsh
+brew install starship
+```
+
+
 ### 4. Update Your `.zshrc`
 
 Open the machine's local `~/.zshrc` file and paste the following snippet at the very bottom.
@@ -40,6 +47,7 @@ This snippet points Starship to the custom symlinked path, enables native direct
 
 ```zsh
 # ========== starship ==========
+eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 # Automatically push visited directories onto the stack
