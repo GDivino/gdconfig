@@ -29,6 +29,7 @@ alias tfplan="tfenv use min-required && terraform plan"
 alias tfinit="tfenv use min-required && terraform init"
 
 alias podman="/opt/podman/bin/podman"
+alias op="/usr/local/bin/op-macos"
 
 function muxdocs {
   tmuxinator dump
@@ -60,10 +61,12 @@ function muxbackstage {
   tmuxinator tf-templates
   tmuxinator tf-modules
   tmuxinator tf-sandbox
+  tmuxinator p27345-engporsvc-templates
   tmuxinator p27345-tfconfig
   tmuxinator p27345-irg
   tmuxinator p24317-tfconfig
   tmuxinator p24317-irg
+  tmuxinator scs-backstage-templates
   tmux a -t dump
 }
 
@@ -85,7 +88,19 @@ function muxinterns {
 function muxonboard {
   tmuxinator dump
   tmuxinator notes
-  tmuxinator p25719-onboarding
+  tmuxinator p27519-onboarding
   tmuxinator p27345-irg
   tmuxinator p24317-irg
+  tmux a -t dump
+}
+
+function muxmigrate {
+  tmuxinator dump
+  tmuxinator notes
+  tmuxinator p29767-git-migration-terraform-modules
+  tmuxinator tf-templates
+  tmuxinator tf-modules
+  tmuxinator tf-sandbox
+  tmuxinator p27345-tfconfig
+  tmux a -t dump
 }
